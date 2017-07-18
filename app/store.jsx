@@ -1,12 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-//import rootReducer from './reducers';
 import createLogger from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
 import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-thunk
 import { composeWithDevTools } from 'redux-devtools-extension'
 import axios from 'axios';
- // For when I do react-redux:
-//export default createStore(rootReducer, applyMiddleware(thunkMiddleware, createLogger()))
-
+ 
 // Initial State
 
 const initialState = {
@@ -162,7 +159,7 @@ function reducer (state = initialState, action){
         case FIND_CAMPUS:
         return Object.assign({}, state, {campus: action.campus});
         case GET_CAMPUS:
-        return Object.assign({}, state, {campuses:[...state.campuses, action.campus]})
+        return Object.assign({}, state, {campuses: [...state.campuses, action.campus]})
         case WRITE_CAMPUS:
         return Object.assign({}, state, {campus: Object.assign({}, state.campus, action.campus)})
         case REMOVE_CAMPUS:
@@ -171,7 +168,7 @@ function reducer (state = initialState, action){
         case GET_ALL_STUDENTS:
         return Object.assign({}, state, {students: action.students} );
         case GET_STUDENT:
-        return Object.assign({}, state, {students:[...state.students, action.student]})
+        return Object.assign({}, state, {students: [...state.students, action.student]})
         case WRITE_STUDENT:
         return Object.assign({}, state, {student: Object.assign({}, state.student, action.student)})
         case REMOVE_STUDENT:

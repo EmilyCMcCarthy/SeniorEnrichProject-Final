@@ -46,7 +46,7 @@ var students =  [
     
     ];
 
-// The below currently works:
+
 db.sync({force: true})
   .then(() => {
     return Bluebird.map(students, student => {

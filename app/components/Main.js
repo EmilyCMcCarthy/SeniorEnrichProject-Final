@@ -1,26 +1,16 @@
 import React, { Component } from 'react';
-//import StatefulCampuses from './StatefulCampuses';
-//import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-//import StatefulStudents from './StatefulStudents';
 import SingleStudent from './SingleStudent';
 import SingleCampus from './SingleCampus';
-import AddStudent from './AddStudent';
 import PracticeCampuses from './PracticeCampuses';
 import PracticeStudents from './PracticeStudents';
 import PracticeAddCampus from './PracticeAddCampus';
 import PracticeAddStudent from './PracticeAddStudent';
 import PracticeDeleteCampus from './PracticeDeleteCampus';
-//import PracticeStudentDisplay from './PracticeStudentDisplay';
 import store, { fetchAllCampuses, fetchAllStudents } from '../store';
 
 export default class Main extends Component {
-
-// constructor () {
-//     super();
-//     this.state = {};
-// }
 
 componentDidMount () {
     const thunk = fetchAllCampuses();

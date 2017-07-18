@@ -24109,14 +24109,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	//import rootReducer from './reducers';
-	// https://github.com/evgenyrodionov/redux-logger
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // https://github.com/evgenyrodionov/redux-logger
 	// https://github.com/gaearon/redux-thunk
 	
-	
-	// For when I do react-redux:
-	//export default createStore(rootReducer, applyMiddleware(thunkMiddleware, createLogger()))
 	
 	// Initial State
 	
@@ -26802,31 +26797,27 @@
 	
 	var _SingleStudent2 = _interopRequireDefault(_SingleStudent);
 	
-	var _SingleCampus = __webpack_require__(330);
+	var _SingleCampus = __webpack_require__(328);
 	
 	var _SingleCampus2 = _interopRequireDefault(_SingleCampus);
 	
-	var _AddStudent = __webpack_require__(332);
-	
-	var _AddStudent2 = _interopRequireDefault(_AddStudent);
-	
-	var _PracticeCampuses = __webpack_require__(333);
+	var _PracticeCampuses = __webpack_require__(330);
 	
 	var _PracticeCampuses2 = _interopRequireDefault(_PracticeCampuses);
 	
-	var _PracticeStudents = __webpack_require__(335);
+	var _PracticeStudents = __webpack_require__(332);
 	
 	var _PracticeStudents2 = _interopRequireDefault(_PracticeStudents);
 	
-	var _PracticeAddCampus = __webpack_require__(338);
+	var _PracticeAddCampus = __webpack_require__(335);
 	
 	var _PracticeAddCampus2 = _interopRequireDefault(_PracticeAddCampus);
 	
-	var _PracticeAddStudent = __webpack_require__(339);
+	var _PracticeAddStudent = __webpack_require__(336);
 	
 	var _PracticeAddStudent2 = _interopRequireDefault(_PracticeAddStudent);
 	
-	var _PracticeDeleteCampus = __webpack_require__(331);
+	var _PracticeDeleteCampus = __webpack_require__(329);
 	
 	var _PracticeDeleteCampus2 = _interopRequireDefault(_PracticeDeleteCampus);
 	
@@ -26841,13 +26832,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	//import StatefulCampuses from './StatefulCampuses';
-	//import Navbar from './Navbar';
-	
-	//import StatefulStudents from './StatefulStudents';
-	
-	//import PracticeStudentDisplay from './PracticeStudentDisplay';
-	
 	
 	var Main = function (_Component) {
 	    _inherits(Main, _Component);
@@ -26860,13 +26844,6 @@
 	
 	    _createClass(Main, [{
 	        key: 'componentDidMount',
-	
-	
-	        // constructor () {
-	        //     super();
-	        //     this.state = {};
-	        // }
-	
 	        value: function componentDidMount() {
 	            var thunk = (0, _store.fetchAllCampuses)();
 	            _store2.default.dispatch(thunk);
@@ -30288,13 +30265,9 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _AllCampuses = __webpack_require__(328);
+	var _PracticeDeleteStudent = __webpack_require__(334);
 	
-	var _AllCampuses2 = _interopRequireDefault(_AllCampuses);
-	
-	var _DeleteStudent = __webpack_require__(329);
-	
-	var _DeleteStudent2 = _interopRequireDefault(_DeleteStudent);
+	var _PracticeDeleteStudent2 = _interopRequireDefault(_PracticeDeleteStudent);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -30380,7 +30353,7 @@
 	                    null,
 	                    'Delete Student?'
 	                ),
-	                _react2.default.createElement(_DeleteStudent2.default, { student: student }),
+	                _react2.default.createElement(_PracticeDeleteStudent2.default, { student: student }),
 	                _react2.default.createElement(
 	                    'h4',
 	                    null,
@@ -36404,158 +36377,6 @@
 	    value: true
 	});
 	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouterDom = __webpack_require__(253);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var AllCampuses = function AllCampuses(props) {
-	
-	    var campuses = props.campuses;
-	    console.log(campuses, "Campuses");
-	    return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	            'h3',
-	            null,
-	            'Campuses'
-	        ),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            campuses.map(function (campus) {
-	                return _react2.default.createElement(
-	                    'div',
-	                    { className: 'col-xs-4', key: campus.id },
-	                    _react2.default.createElement(
-	                        _reactRouterDom.Link,
-	                        { to: 'campuses/' + campus.id },
-	                        _react2.default.createElement(
-	                            'h5',
-	                            null,
-	                            campus.name
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        campus.location
-	                    )
-	                );
-	            })
-	        )
-	    );
-	};
-	
-	exports.default = AllCampuses;
-
-/***/ }),
-/* 329 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _axios = __webpack_require__(225);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var DeleteStudent = function (_Component) {
-	  _inherits(DeleteStudent, _Component);
-	
-	  function DeleteStudent(props) {
-	    _classCallCheck(this, DeleteStudent);
-	
-	    var _this = _possibleConstructorReturn(this, (DeleteStudent.__proto__ || Object.getPrototypeOf(DeleteStudent)).call(this, props));
-	
-	    _this.state = {
-	      student: _this.props.student,
-	      error: false
-	    };
-	    _this.onClick = _this.onClick.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(DeleteStudent, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount(props) {
-	      //console.log(this.state.student, "student inside DeleteStudent")
-	
-	      //const student = this.state.student;
-	      // axios.get(`/api/student/${student.id}`)
-	      //   .then(res => res.data)
-	      //   .then(student => {
-	      //     this.setState({ student });
-	      //   });
-	    }
-	  }, {
-	    key: 'onClick',
-	    value: function onClick(props) {
-	      console.log(this.props, "this.props");
-	      var student = this.props.student;
-	      console.log("test");
-	      _axios2.default.delete('api/students/' + student.id).catch(function (err) {
-	        console.error(err);
-	      });
-	      this.setState({ student: {} });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	
-	      var student = this.state.student;
-	      var onClick = this.onClick;
-	
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'deleteStudent' },
-	        _react2.default.createElement(
-	          'button',
-	          {
-	            className: 'selectDelete',
-	            onClick: onClick },
-	          'X'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return DeleteStudent;
-	}(_react.Component);
-	
-	exports.default = DeleteStudent;
-
-/***/ }),
-/* 330 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
@@ -36572,7 +36393,7 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
-	var _PracticeDeleteCampus = __webpack_require__(331);
+	var _PracticeDeleteCampus = __webpack_require__(329);
 	
 	var _PracticeDeleteCampus2 = _interopRequireDefault(_PracticeDeleteCampus);
 	
@@ -36726,7 +36547,7 @@
 	exports.default = SingleCampus;
 
 /***/ }),
-/* 331 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36809,121 +36630,7 @@
 	exports.default = PracticeDeleteCampus;
 
 /***/ }),
-/* 332 */
-/***/ (function(module, exports) {
-
-	/* import React, { Component } from 'react';
-	import axios from 'axios';
-	import AllCampuses from './AllCampuses';
-
-	export default class AddStudent extends Component {
-
-	  constructor (props) {
-	    super(props);
-	    this.state = {
-	      students: [],
-	      newStudent: {},
-	      campuses: [],
-	      campus: 1,
-	      name: "",
-	      email: "",
-	      error: false
-	      
-	      
-	    };
-	    this.handleChange = this.handleChange.bind(this);
-	    this.handleSubmit = this.handleSubmit.bind(this);
-	  }
-
-	  componentDidMount () {
-	        axios.get('api/campuses')
-	        .then(res => res.data)
-	        .then(campuses => {
-	            this.setState({ campuses })
-	        });
-
-
-	  }
-
-	   fetchCampus(CampusId) {
-	        const campusPath = `/api/campuses/${CampusId}`
-	        axios.get(campusPath)
-	        .then(res => res.data)
-	        .then(campus => {
-	          console.log(campus, "campus inside of fetch campus")
-	            this.setState({ campus })
-	        });
-	   }
-	  handleChange (evt) {
-	        const value = evt.target.value;
-	        const name = evt.target.name;
-	        console.log(name, "name");
-	        console.log(name === "campus", "equal to campus?")
-	        if(name === "campus"){
-	          console.log("Hello!")
-	          this.fetchCampus(value)
-	          console.log(this.state.campus.name, "this.state.campus")
-	        } 
-	        
-	   this.setState({
-	      
-	       
-	       [name]: value,
-	       error: false
-	   })
-	  }
-
-	  handleSubmit (evt) {
-	    evt.preventDefault();
-	    console.log("inside handle submit", this.state.name, this.state.email, this.state.campus);
-	   axios.post('/api/students', {name: this.state.name, email: this.state.email, campus: this.state.campus })
-
-	  }
-
-	  render () {
-
-	    const campuses = this.state.campuses;
-	    const handleChange = this.handleChange;
-	    const handleSubmit = this.handleSubmit;
-
-	    return (
-	      <div className="well">
-	        <form className="form-horizontal" noValidate name="studentSubmit" onSubmit={handleSubmit}>
-	            <div className="form-group">
-	            <label>Name:
-	            <input type="text" name="name" required onChange={handleChange} />
-	            </label>
-	            <label>
-	            Email Address
-	             <input type="text" name="email" required onChange={handleChange} />
-	             </label>
-	             <label>
-	          Select A Campus
-	          <select type="text" name="campus" required onChange={handleChange}>
-	            {
-	                campuses &&  campuses.map(campus => (
-	                    <option key={campus.id} value={campus.id}>{campus.name}</option>
-	                ))
-	            }
-	          </select>
-	          </label>
-	          </div>
-	          <div className="form-group">
-	          <div className="col-xs-10 col-xs-offset-2">
-	                <button type="submit" className="btn btn-success">Add Student</button>
-	              </div>
-	          </div>
-	        </form>
-	      </div>
-	    );
-	  }
-	}
-
-	*/
-	"use strict";
-
-/***/ }),
-/* 333 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36942,7 +36649,7 @@
 	
 	var _store2 = _interopRequireDefault(_store);
 	
-	var _PracticeCampusDisplay = __webpack_require__(334);
+	var _PracticeCampusDisplay = __webpack_require__(331);
 	
 	var _PracticeCampusDisplay2 = _interopRequireDefault(_PracticeCampusDisplay);
 	
@@ -37000,7 +36707,7 @@
 	exports.default = PracticeCampuses;
 
 /***/ }),
-/* 334 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37072,7 +36779,7 @@
 	}
 
 /***/ }),
-/* 335 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37093,7 +36800,7 @@
 	
 	var _store2 = _interopRequireDefault(_store);
 	
-	var _PracticeStudentDisplay = __webpack_require__(336);
+	var _PracticeStudentDisplay = __webpack_require__(333);
 	
 	var _PracticeStudentDisplay2 = _interopRequireDefault(_PracticeStudentDisplay);
 	
@@ -37152,7 +36859,7 @@
 	exports.default = PracticeStudents;
 
 /***/ }),
-/* 336 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37169,7 +36876,7 @@
 	
 	var _reactRouterDom = __webpack_require__(253);
 	
-	var _PracticeDeleteStudent = __webpack_require__(337);
+	var _PracticeDeleteStudent = __webpack_require__(334);
 	
 	var _PracticeDeleteStudent2 = _interopRequireDefault(_PracticeDeleteStudent);
 	
@@ -37354,7 +37061,7 @@
 	exports.default = PracticeStudentDisplay;
 
 /***/ }),
-/* 337 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37438,7 +37145,7 @@
 	exports.default = PracticeDeleteStudent;
 
 /***/ }),
-/* 338 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37562,7 +37269,7 @@
 	exports.default = PracticeAddCampus;
 
 /***/ }),
-/* 339 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

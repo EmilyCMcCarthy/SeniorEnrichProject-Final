@@ -2,8 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Bluebird from 'bluebird';
 import axios from 'axios';
-import AllCampuses from './AllCampuses';
-import DeleteStudent from './DeleteStudent';
+import PracticeDeleteStudent from './PracticeDeleteStudent';
 
 
 export default class SingleStudent extends React.Component {
@@ -50,7 +49,7 @@ export default class SingleStudent extends React.Component {
                 <h3 contentEditable="true">{ student.name }</h3>
                 <p>email: { student.email }</p>
                 <h4>Delete Student?</h4>
-                <DeleteStudent student={student} />
+                <PracticeDeleteStudent student={student} />
                 <h4>Student's Campus: </h4>
                 <p><Link to={`/campuses/${student.campusId}`}>{ student.campus }</Link></p>
              </div>

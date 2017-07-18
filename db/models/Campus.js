@@ -35,3 +35,4 @@ const Campus = module.exports = db.define('campus', {
      }
     }
 })
+
